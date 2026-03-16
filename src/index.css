@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== DARK THEME (default) ===== */
+:root, [data-theme="dark"] {
+  --color-bg: #000000;
+  --color-card: #0a0a0a;
+  --color-sidebar: #050505;
+  --color-border: #1a1a1a;
+  --color-hover: #111111;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --text-faint: #525252;
+  --chart-grid: rgba(255,255,255,0.06);
+  --chart-tick: #737373;
+}
+
+/* ===== LIGHT THEME ===== */
+[data-theme="light"] {
+  --color-bg: #f5f5f5;
+  --color-card: #ffffff;
+  --color-sidebar: #fafafa;
+  --color-border: #e5e5e5;
+  --color-hover: #f0f0f0;
+  --text-primary: #000000;
+  --text-secondary: #1a1a1a;
+  --text-muted: #333333;
+  --text-faint: #555555;
+  --chart-grid: rgba(0,0,0,0.08);
+  --chart-tick: #333333;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.4); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.35s ease-out; }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 6px 2px rgba(251, 146, 60, 0.4); }
+  50% { box-shadow: 0 0 14px 5px rgba(251, 146, 60, 0.7); }
+}
+.glow-marker { animation: glow-pulse 2s ease-in-out infinite; }
+
+.chart-container { position: relative; width: 100%; }
+
+/* Theme-aware utility classes */
+@layer utilities {
+  .text-primary { color: var(--text-primary) !important; }
+  .text-secondary { color: var(--text-secondary) !important; }
+  .text-muted { color: var(--text-muted) !important; }
+  .text-faint { color: var(--text-faint) !important; }
+  .bg-dark-bg { background-color: var(--color-bg) !important; transition: background-color 0.3s ease; }
+  .bg-dark-card { background-color: var(--color-card) !important; transition: background-color 0.3s ease; }
+  .bg-dark-sidebar { background-color: var(--color-sidebar) !important; transition: background-color 0.3s ease; }
+  .bg-dark-hover { background-color: var(--color-hover) !important; transition: background-color 0.3s ease; }
+}

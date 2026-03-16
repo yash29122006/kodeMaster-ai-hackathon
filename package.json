@@ -1,0 +1,30 @@
+{
+  "name": "accidentwatch-admin",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
+    "chart.js": "^4.4.7",
+    "leaflet": "^1.9.4",
+    "leaflet.heat": "^0.2.0",
+    "lucide-react": "^0.469.0",
+    "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  }
+}
